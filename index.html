@@ -1,0 +1,1233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Carrier dock booking and scheduling concept for Cold Solutions at Rush Creek - 33 doors, self-service appointments, gate-stamped turn times.">
+<meta name="theme-color" content="#0E1C26">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dock Command - Rush Creek">
+<meta property="og:description" content="A concept for carrier-booked dock appointments: 33 doors, automatic door assignment by temperature bank, and turn times stamped at the gate.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 100 100&apos;%3E%3Ctext y=&apos;.9em&apos; font-size=&apos;90&apos;%3E%F0%9F%A7%8A%3C/text%3E%3C/svg%3E">
+<title>Dock Command</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+
+<style>:root{--ground:#F1F5F8;--panel:#FFFFFF;--panel-2:#F6F9FB;--sunk:#E7EEF3;--sidebar:#0E1C26;--sidebar-ink:#B9CCD6;--sidebar-ink-hi:#FFFFFF;--sidebar-rule:#1E3140;--ink:#0C1A22;--ink-soft:#54686F;--ink-faint:#8298A1;--rule:#DDE6EC;--rule-hard:#C6D4DC;--accent:#0F6C99;--accent-hi:#1287BE;--accent-ink:#FFFFFF;--accent-wash:#E1F0F7;--frozen:#4F5BD5;--frozen-wash:#E6E8FA;--cooler:#0E9384;--cooler-wash:#DDF0EE;--ambient:#C2721C;--ambient-wash:#F8EADA;--ok:#12805A;--ok-wash:#DDEFE7;--warn:#A9701A;--warn-wash:#F7EBD8;--late:#AB3A33;--late-wash:#F8E2E0;--sky-a:#DCEBF6;--sky-b:#EFF5F9;--shadow-s:0 1px 2px rgba(12,26,34,.05);--shadow-m:0 1px 3px rgba(12,26,34,.06),0 10px 24px -18px rgba(12,26,34,.35);--shadow-l:0 20px 60px -24px rgba(12,26,34,.4)}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#080E13;--panel:#0F1920;--panel-2:#131F27;--sunk:#182630;--sidebar:#0A1218;--sidebar-ink:#8CA3AE;--sidebar-ink-hi:#EAF3F7;--sidebar-rule:#1A2A35;--ink:#DFEAF0;--ink-soft:#90A5AE;--ink-faint:#6C838D;--rule:#1F2E38;--rule-hard:#2B3D48;--accent:#3FA4D4;--accent-hi:#5CBAE6;--accent-ink:#04141C;--accent-wash:#102A38;--frozen:#6E78E0;--frozen-wash:#1A1E38;--cooler:#17A08D;--cooler-wash:#0D2A27;--ambient:#C08540;--ambient-wash:#2C2114;--ok:#3FB183;--ok-wash:#0F2921;--warn:#C99447;--warn-wash:#2A2115;--late:#D96A62;--late-wash:#2E1A19;--sky-a:#132430;--sky-b:#0D171E;--shadow-s:0 1px 2px rgba(0,0,0,.5);--shadow-m:0 1px 3px rgba(0,0,0,.5),0 10px 24px -18px rgba(0,0,0,.9);--shadow-l:0 20px 60px -24px rgba(0,0,0,.95)}}:root[data-theme="dark"]{--ground:#080E13;--panel:#0F1920;--panel-2:#131F27;--sunk:#182630;--sidebar:#0A1218;--sidebar-ink:#8CA3AE;--sidebar-ink-hi:#EAF3F7;--sidebar-rule:#1A2A35;--ink:#DFEAF0;--ink-soft:#90A5AE;--ink-faint:#6C838D;--rule:#1F2E38;--rule-hard:#2B3D48;--accent:#3FA4D4;--accent-hi:#5CBAE6;--accent-ink:#04141C;--accent-wash:#102A38;--frozen:#6E78E0;--frozen-wash:#1A1E38;--cooler:#17A08D;--cooler-wash:#0D2A27;--ambient:#C08540;--ambient-wash:#2C2114;--ok:#3FB183;--ok-wash:#0F2921;--warn:#C99447;--warn-wash:#2A2115;--late:#D96A62;--late-wash:#2E1A19;--sky-a:#132430;--sky-b:#0D171E;--shadow-s:0 1px 2px rgba(0,0,0,.5);--shadow-m:0 1px 3px rgba(0,0,0,.5),0 10px 24px -18px rgba(0,0,0,.9);--shadow-l:0 20px 60px -24px rgba(0,0,0,.95)}*{box-sizing:border-box}body{margin:0;background:var(--ground);color:var(--ink);font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}.k{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-faint)}.spacer{flex:1 1 auto}[hidden]{display:none !important}.concept{background:var(--sidebar);color:var(--sidebar-ink);padding:8px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:5px 13px;font-size:12px;border-bottom:1px solid var(--sidebar-rule)}.concept b{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border:1px solid currentColor;padding:2px 7px;color:var(--sidebar-ink-hi)}.modesw{display:inline-flex;background:var(--sunk);border-radius:8px;padding:3px;gap:2px}.modesw button{appearance:none;border:0;cursor:pointer;background:none;font-family:Archivo,sans-serif;font-size:12.5px;font-weight:600;color:var(--ink-soft);padding:6px 13px;border-radius:6px;white-space:nowrap}.modesw button[aria-pressed="true"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow-s)}.modesw button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.app{display:grid;grid-template-columns:216px minmax(0,1fr);min-height:100vh}@media (max-width:900px){.app{grid-template-columns:1fr}}aside{background:var(--sidebar);color:var(--sidebar-ink);display:flex;flex-direction:column;padding:20px 0 16px;gap:22px;border-right:1px solid var(--sidebar-rule)}@media (max-width:900px){aside{display:none}}.logo{display:flex;align-items:center;gap:10px;padding:0 18px}.logo .mk{width:30px;height:30px;flex:none;border-radius:7px;background:linear-gradient(150deg,var(--accent-hi),var(--frozen));display:grid;place-items:center;color:#fff;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600}.logo .nm{display:flex;flex-direction:column;line-height:1.15}.logo .nm b{color:var(--sidebar-ink-hi);font-size:14px;font-weight:600;letter-spacing:-.01em}.logo .nm span{font-size:10.5px;opacity:.7}nav{display:flex;flex-direction:column;gap:1px;padding:0 10px}nav .grp{padding:14px 8px 6px;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.5}nav button{appearance:none;border:0;background:none;width:100%;text-align:left;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;color:var(--sidebar-ink);font-family:Archivo,sans-serif;font-size:13.5px;font-weight:500}nav button svg{width:16px;height:16px;flex:none;opacity:.72}nav button:hover{background:rgba(255,255,255,.055);color:var(--sidebar-ink-hi)}nav button[aria-current="page"]{background:rgba(255,255,255,.1);color:var(--sidebar-ink-hi)}nav button[aria-current="page"] svg{opacity:1;color:var(--accent-hi)}nav button:focus-visible{outline:2px solid var(--accent-hi);outline-offset:-2px}nav .cnt{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:10.5px;opacity:.6}.sidefoot{margin-top:auto;padding:0 18px}.facility{background:rgba(255,255,255,.05);border:1px solid var(--sidebar-rule);border-radius:8px;padding:11px 12px;display:flex;flex-direction:column;gap:3px}.facility b{color:var(--sidebar-ink-hi);font-size:12.5px;font-weight:600}.facility span{font-size:11px;opacity:.72;line-height:1.45}.zonekey{display:flex;gap:4px;margin-top:5px}.zonekey i{height:3px;flex:1;border-radius:2px}main{display:flex;flex-direction:column;min-width:0}.topbar{display:flex;align-items:center;gap:14px;padding:11px 24px;background:var(--panel);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:30;flex-wrap:wrap}.crumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-faint);min-width:0}.crumb b{color:var(--ink);font-weight:600}.crumb .sep{opacity:.45}.live{display:inline-flex;align-items:center;gap:7px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--ok);background:var(--ok-wash);padding:4px 9px;border-radius:20px}.live i{width:6px;height:6px;border-radius:50%;background:currentColor;display:block}.datepill{display:inline-flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--rule);padding:6px 12px;border-radius:7px;font-size:12.5px;font-weight:500;color:var(--ink-soft)}.avatar{width:31px;height:31px;border-radius:50%;flex:none;background:linear-gradient(150deg,var(--cooler),var(--accent));color:#fff;display:grid;place-items:center;font-size:11.5px;font-weight:600}.btn{appearance:none;cursor:pointer;font-family:Archivo,sans-serif;font-size:13.5px;font-weight:600;padding:8px 15px;border-radius:7px;border:1px solid var(--rule);background:var(--panel);color:var(--ink);display:inline-flex;align-items:center;gap:7px}.btn:hover{border-color:var(--rule-hard)}.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);box-shadow:var(--shadow-s)}.btn.pri:hover{background:var(--accent-hi);border-color:var(--accent-hi)}.btn.pri:disabled{opacity:.4;cursor:not-allowed}.btn svg{width:15px;height:15px}.btn.sm{padding:6px 11px;font-size:12.5px}.canvas{padding:0 24px 60px}@media (max-width:640px){.canvas{padding:0 14px 50px}.topbar{padding:11px 14px}}.hero{background:linear-gradient(168deg,var(--sky-a),var(--sky-b) 62%,var(--panel));border:1px solid var(--rule);border-radius:14px;padding:26px;margin-top:22px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}.hero h1{margin:8px 0 0;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(28px,4.2vw,42px);line-height:1.03;letter-spacing:-.012em;text-wrap:balance;max-width:19ch}.hero h1 em{font-style:italic;color:var(--accent)}.hero p{margin:9px 0 0;color:var(--ink-soft);font-size:14.5px;max-width:52ch}.heronum{display:flex;flex-direction:column;align-items:flex-end;gap:2px}.heronum .val{font-family:"Instrument Serif",Georgia,serif;font-size:60px;line-height:.9;letter-spacing:-.02em;color:var(--ok);font-variant-numeric:tabular-nums}.heronum .cap{font-size:12.5px;color:var(--ink-soft);text-align:right;max-width:22ch}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px;margin-top:12px}.tile{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:15px 16px 13px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow-s);min-width:0}.tile .v{font-size:26px;font-weight:700;letter-spacing:-.028em;line-height:1;font-variant-numeric:tabular-nums}.tile .n{font-size:12px;color:var(--ink-soft)}.tile .row{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}.delta{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;padding:2px 6px;border-radius:4px;white-space:nowrap}.delta.up{color:var(--ok);background:var(--ok-wash)}.delta.down{color:var(--late);background:var(--late-wash)}.delta.flat{color:var(--ink-faint);background:var(--sunk)}.shead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;margin:30px 0 12px}.shead h2{margin:0;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:26px;letter-spacing:-.01em;line-height:1.15}.shead .note{font-size:12.5px;color:var(--ink-faint)}.card{background:var(--panel);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow-m);overflow:hidden}.cardpad{padding:18px}.cardhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.cardhead h3{margin:0;font-size:15px;font-weight:600;letter-spacing:-.008em}.cardsub{font-size:12.5px;color:var(--ink-faint);margin:4px 0 14px}.chip{display:inline-flex;align-items:center;gap:5px;font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:4px;white-space:nowrap}.chip i{width:6px;height:6px;border-radius:2px;display:block;background:currentColor}.chip.frozen{color:var(--frozen);background:var(--frozen-wash)}.chip.cooler{color:var(--cooler);background:var(--cooler-wash)}.chip.ambient{color:var(--ambient);background:var(--ambient-wash)}.chip.ok{color:var(--ok);background:var(--ok-wash)}.chip.warn{color:var(--warn);background:var(--warn-wash)}.chip.late{color:var(--late);background:var(--late-wash)}.chip.sched{color:var(--ink-soft);background:var(--sunk)}.tblwrap{overflow-x:auto}table.dt{border-collapse:collapse;width:100%;font-size:13px}table.dt th{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;background:var(--panel-2)}table.dt td{padding:10px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;font-variant-numeric:tabular-nums}table.dt tr:last-child td{border-bottom:0}table.dt tr.fresh td{background:var(--accent-wash)}td.nm{font-weight:600;white-space:normal;min-width:150px}.via{font-size:12px;color:var(--ink-faint)}.via.phone{color:var(--warn);font-weight:600}.tlbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:12px 16px;border-bottom:1px solid var(--rule);background:var(--panel-2)}.zchip{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:var(--ink-soft)}.zchip i{width:10px;height:10px;border-radius:3px;display:block}.tlscroll{overflow-x:auto;overflow-y:hidden}.tl{min-width:940px;position:relative}.tlhours{display:grid;grid-template-columns:88px minmax(0,1fr);border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--panel);z-index:6}.tlhours .sp{border-right:1px solid var(--rule);background:var(--panel)}.tlhours .hrs{display:grid;grid-template-columns:repeat(12,1fr)}.tlhours .hr{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-faint);padding:7px 0 6px 7px;border-left:1px solid var(--rule)}.tlhours .hr:first-child{border-left:0}.zoneband{display:flex;align-items:center;gap:8px;padding:7px 14px;background:var(--sunk);border-bottom:1px solid var(--rule);font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);position:sticky;left:0}.zoneband i{width:9px;height:9px;border-radius:2px;display:block}.zoneband em{font-style:normal;margin-left:auto;letter-spacing:.06em;text-transform:none;font-size:10.5px;color:var(--ink-faint)}.drow{display:grid;grid-template-columns:88px minmax(0,1fr);border-bottom:1px solid var(--rule)}.drow:last-child{border-bottom:0}.dlabel{border-right:1px solid var(--rule);padding:0 12px;display:flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;position:sticky;left:0;background:var(--panel);z-index:4;height:34px}.dlabel .zd{width:7px;height:7px;border-radius:2px;flex:none}.dlane{position:relative;height:34px;background:repeating-linear-gradient(to right,transparent 0,transparent calc(8.3333% - 1px),var(--rule) calc(8.3333% - 1px),var(--rule) 8.3333%)}.appt{position:absolute;top:5px;height:24px;border-radius:5px;display:flex;align-items:center;gap:5px;padding:0 7px;overflow:hidden;white-space:nowrap;font-size:11px;font-weight:600;border:1px solid transparent;box-shadow:0 0 0 2px var(--panel)}.appt .t{font-family:"IBM Plex Mono",monospace;font-weight:500;opacity:.72;font-size:10px}.appt.frozen{background:var(--frozen-wash);color:var(--frozen);border-color:var(--frozen)}.appt.cooler{background:var(--cooler-wash);color:var(--cooler);border-color:var(--cooler)}.appt.ambient{background:var(--ambient-wash);color:var(--ambient);border-color:var(--ambient)}.appt.phone::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--warn);flex:none;margin-left:auto}.appt.new{animation:pop .55s cubic-bezier(.2,.9,.3,1.1);box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--accent)}@keyframes pop{0%{transform:scaleX(.2);opacity:0}100%{transform:scaleX(1);opacity:1}}@media (prefers-reduced-motion:reduce){.appt.new{animation:none}}.nowline{position:absolute;top:0;bottom:0;width:2px;background:var(--late);z-index:5;pointer-events:none}.nowline.nocap::before{display:none}.nowline::before{content:"NOW";position:absolute;top:-1px;left:4px;font-family:"IBM Plex Mono",monospace;font-size:8.5px;font-weight:600;letter-spacing:.1em;color:var(--late);background:var(--panel);padding:0 3px}.tip{position:fixed;z-index:90;pointer-events:none;background:var(--sidebar);color:var(--sidebar-ink-hi);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.5;box-shadow:var(--shadow-l);max-width:250px;opacity:0;transform:translateY(4px);transition:opacity .12s ease,transform .12s ease}.tip.on{opacity:1;transform:translateY(0)}.tip b{display:block;font-size:13px;margin-bottom:3px}.tip dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px 12px}.tip dt{opacity:.62;font-size:11px}.tip dd{margin:0;font-family:"IBM Plex Mono",monospace;font-size:11.5px}.lower{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:14px;margin-top:14px;align-items:start}@media (max-width:980px){.lower{grid-template-columns:1fr}}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}@media (max-width:820px){.two{grid-template-columns:1fr}}svg.chart{display:block;width:100%;height:auto;overflow:visible}.gridline{stroke:var(--rule);stroke-width:1}.axis{fill:var(--ink-faint);font-family:"IBM Plex Mono",monospace;font-size:9.5px}.chartfoot{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:14px;padding-top:13px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink-faint)}.chartfoot b{color:var(--ink);font-weight:600;font-family:"IBM Plex Mono",monospace;font-size:12.5px;margin-right:4px}.util{display:flex;flex-direction:column;gap:13px;margin-top:4px}.ub{display:flex;flex-direction:column;gap:5px}.ub .lbl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:12.5px}.ub .lbl b{font-weight:600}.ub .lbl span{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}.track{height:8px;background:var(--sunk);border-radius:4px;overflow:hidden}.track i{display:block;height:100%;border-radius:4px}.feed{display:flex;flex-direction:column;max-height:318px;overflow-y:auto}.fitem{display:flex;gap:11px;padding:11px 18px;border-bottom:1px solid var(--rule)}.fitem:last-child{border-bottom:0}.fitem .dot{width:7px;height:7px;border-radius:50%;margin-top:6px;flex:none;background:var(--ink-faint)}.fitem.ok .dot{background:var(--ok)}.fitem.warn .dot{background:var(--warn)}.fitem.acc .dot{background:var(--accent)}.fitem .bd p{margin:0;font-size:13px;line-height:1.45}.fitem .bd time{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-faint)}.probes{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.probe{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:14px 15px;display:flex;flex-direction:column;gap:7px;box-shadow:var(--shadow-s)}.probe .rd{font-family:"IBM Plex Mono",monospace;font-size:24px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.probe .tg{font-size:11.5px;color:var(--ink-faint)}.spark{display:block;width:100%;height:34px;overflow:visible}.banner{display:flex;gap:12px;align-items:flex-start;border-radius:11px;padding:14px 16px;border:1px solid var(--warn);background:var(--warn-wash);margin-bottom:14px}.banner svg{width:18px;height:18px;flex:none;color:var(--warn);margin-top:1px}.banner p{margin:0;font-size:13.5px;line-height:1.5}.banner p b{font-weight:600}footer.pitch{margin-top:34px;padding:22px 24px;border-top:1px solid var(--rule);color:var(--ink-faint);font-size:12.5px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 34px}footer.pitch p{margin:0;max-width:48ch;line-height:1.6}footer.pitch strong{color:var(--ink-soft)}.portal{min-height:100vh;background:var(--ground);display:flex;flex-direction:column}.phead{background:linear-gradient(172deg,var(--sky-a),var(--ground) 78%);border-bottom:1px solid var(--rule)}.pnav{max-width:1000px;margin:0 auto;width:100%;padding:14px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.pbrand{display:flex;align-items:center;gap:10px}.pbrand .mk{width:32px;height:32px;border-radius:8px;flex:none;background:linear-gradient(150deg,var(--accent-hi),var(--frozen));display:grid;place-items:center;color:#fff;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600}.pbrand b{font-size:15px;font-weight:600;display:block;line-height:1.2}.pbrand span{font-size:11.5px;color:var(--ink-soft)}.ptabs{display:flex;gap:2px;background:var(--sunk);padding:3px;border-radius:9px}.ptabs button{appearance:none;border:0;background:none;cursor:pointer;font-family:Archivo,sans-serif;font-size:13px;font-weight:600;color:var(--ink-soft);padding:7px 14px;border-radius:6px}.ptabs button[aria-selected="true"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow-s)}.ptabs button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.phero{max-width:1000px;margin:0 auto;width:100%;padding:14px 22px 40px;text-align:center}.phero h1{margin:0;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(31px,5.2vw,50px);line-height:1.02;letter-spacing:-.014em;text-wrap:balance}.phero h1 em{font-style:italic;color:var(--accent)}.phero p{margin:12px auto 0;color:var(--ink-soft);font-size:16px;max-width:50ch}.phero .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-top:20px}.phero .trust span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-soft)}.phero .trust svg{width:14px;height:14px;color:var(--ok)}.phero.tight{padding-bottom:24px}.phero.tight h1{font-size:clamp(22px,3.2vw,30px)}.phero.tight p,.phero.tight .trust{display:none}.pbody{max-width:1000px;margin:0 auto;width:100%;padding:0 22px 70px;flex:1}.pcard{background:var(--panel);border:1px solid var(--rule);border-radius:16px;box-shadow:var(--shadow-m);overflow:hidden}.steps{display:flex;border-bottom:1px solid var(--rule);background:var(--panel-2)}.stp{flex:1;padding:13px 14px;display:flex;align-items:center;gap:10px;min-width:0;border-right:1px solid var(--rule)}.stp:last-child{border-right:0}.stp .no{width:23px;height:23px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;background:var(--sunk);color:var(--ink-faint)}.stp .lb{font-size:12.5px;font-weight:600;color:var(--ink-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.stp.on .no{background:var(--accent);color:var(--accent-ink)}.stp.on .lb{color:var(--ink)}.stp.did .no{background:var(--ok-wash);color:var(--ok)}.stp.did .lb{color:var(--ink-soft)}.pstep{padding:26px}@media (max-width:640px){.pstep{padding:18px}.pnav{padding:12px 14px}.pbody{padding:0 14px 50px}}.pstep h2{margin:0 0 5px;font-size:20px;font-weight:600;letter-spacing:-.012em}.pstep .sub{margin:0 0 20px;color:var(--ink-soft);font-size:14px;max-width:56ch}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}.field label{font-size:12.5px;font-weight:600;color:var(--ink-soft)}.field input,.field select{font-family:Archivo,sans-serif;font-size:14.5px;padding:10px 12px;background:var(--panel-2);border:1px solid var(--rule);border-radius:8px;color:var(--ink)}.field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:-1px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media (max-width:520px){.grid2{grid-template-columns:1fr}}.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}@media (max-width:520px){.zones{grid-template-columns:1fr}}.zone{appearance:none;cursor:pointer;border:1px solid var(--rule);border-radius:11px;background:var(--panel-2);padding:15px 10px;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:Archivo,sans-serif;color:var(--ink-soft)}.zone .zn{font-size:14px;font-weight:600}.zone .zt{font-family:"IBM Plex Mono",monospace;font-size:11.5px;opacity:.85}.zone .zd{font-size:11px;opacity:.75}.zone:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.zone[aria-pressed="true"][data-zone="frozen"]{background:var(--frozen-wash);border-color:var(--frozen);color:var(--frozen)}.zone[aria-pressed="true"][data-zone="cooler"]{background:var(--cooler-wash);border-color:var(--cooler);color:var(--cooler)}.zone[aria-pressed="true"][data-zone="ambient"]{background:var(--ambient-wash);border-color:var(--ambient);color:var(--ambient)}.daybar{display:flex;gap:8px;overflow-x:auto;padding-bottom:5px;margin-bottom:18px}.day{appearance:none;cursor:pointer;flex:none;border:1px solid var(--rule);border-radius:10px;background:var(--panel-2);padding:9px 14px;display:flex;flex-direction:column;align-items:center;gap:1px;font-family:Archivo,sans-serif;color:var(--ink-soft);min-width:74px}.day b{font-size:15px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}.day span{font-size:10.5px;font-family:"IBM Plex Mono",monospace;letter-spacing:.06em;text-transform:uppercase}.day[aria-pressed="true"]{background:var(--accent);border-color:var(--accent)}.day[aria-pressed="true"] b,.day[aria-pressed="true"] span{color:var(--accent-ink)}.day:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.slotsec{margin-bottom:20px}.slotsec h4{margin:0 0 9px;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-faint)}.slotgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px}.slot{appearance:none;cursor:pointer;border:1px solid var(--rule);border-radius:9px;background:var(--panel-2);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:13.5px;padding:11px 3px;font-variant-numeric:tabular-nums;display:flex;flex-direction:column;align-items:center;gap:2px}.slot small{font-family:Archivo,sans-serif;font-size:10px;color:var(--ink-faint);font-weight:600}.slot:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}.slot:hover:not(:disabled) small{color:var(--accent)}.slot:focus-visible{outline:2px solid var(--accent);outline-offset:1px}.slot[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}.slot[aria-pressed="true"] small{color:var(--accent-ink);opacity:.85}.slot:disabled{opacity:.38;cursor:not-allowed;text-decoration:line-through}.review{display:grid;grid-template-columns:auto 1fr;gap:10px 26px;background:var(--panel-2);border:1px solid var(--rule);border-radius:12px;padding:18px 20px}.review dt{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);align-self:center}.review dd{margin:0;font-weight:600;font-size:14.5px}.pactions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)}.btn.lg{padding:12px 24px;font-size:15px;border-radius:9px}.pass{border:1px solid var(--ok);background:var(--ok-wash);border-radius:14px;overflow:hidden}.passtop{padding:22px 24px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;border-bottom:1px dashed var(--rule-hard)}.passtop h3{margin:0;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:30px;line-height:1.05}.passdoor{text-align:center}.passdoor .n{font-family:"Instrument Serif",Georgia,serif;font-size:56px;line-height:.86;color:var(--accent);font-variant-numeric:tabular-nums;display:block}.qr{width:88px;height:88px;flex:none;border-radius:9px;background:var(--panel);padding:7px;border:1px solid var(--rule)}.passgrid{padding:20px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px 26px}.passgrid div{display:flex;flex-direction:column;gap:2px}.passgrid .l{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft)}.passgrid .v{font-size:15px;font-weight:600}.passfoot{padding:14px 24px;background:var(--panel);border-top:1px solid var(--rule);font-size:13px;color:var(--ink-soft)}.apptlist{display:flex;flex-direction:column;gap:11px}.arow{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:15px 17px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;box-shadow:var(--shadow-s)}.arow .dr{font-family:"Instrument Serif",Georgia,serif;font-size:34px;line-height:.9;color:var(--accent);min-width:44px;text-align:center}.arow .mid{flex:1 1 190px;min-width:0}.arow .mid b{display:block;font-size:15px;font-weight:600}.arow .mid span{font-size:12.5px;color:var(--ink-soft)}.arow .rt{display:flex;flex-direction:column;align-items:flex-end;gap:5px}.arow .rt .tm{font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:600}::-webkit-scrollbar{height:10px;width:10px}::-webkit-scrollbar-thumb{background:var(--rule-hard);border-radius:6px}::-webkit-scrollbar-track{background:transparent}</style>
+</head>
+<body>
+<div class="concept">
+  <b>Concept mockup</b>
+  <span>Not a live system. A proposal built for Cold Solutions at Rush Creek — every carrier, reference and time below is invented sample data.</span>
+</div>
+
+<!-- ==================== FACILITY ==================== -->
+<div class="app" id="appFacility">
+  <aside>
+    <div class="logo">
+      <div class="mk">RC</div>
+      <div class="nm"><b>Dock Command</b><span>Rush Creek</span></div>
+    </div>
+
+    <nav id="nav">
+      <span class="grp">Operations</span>
+      <button type="button" data-view="schedule" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>
+        Dock schedule <span class="cnt" id="navCount">—</span>
+      </button>
+      <button type="button" data-view="receiving">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h11l5 5v11H4z"/><path d="M8 12h8M8 16h5"/></svg>
+        Gate &amp; receiving <span class="cnt" id="navGate">—</span>
+      </button>
+      <button type="button" data-view="carriers">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg>
+        Carriers <span class="cnt">10</span>
+      </button>
+      <button type="button" data-view="temps">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v6M12 21v-6"/><circle cx="12" cy="12" r="3"/><path d="M5 12H3M21 12h-2"/></svg>
+        Temperature log
+      </button>
+      <span class="grp">Insight</span>
+      <button type="button" data-view="reports">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5M4 19h16"/><path d="M8 15l4-5 3 3 4-6"/></svg>
+        Turn-time reports
+      </button>
+      <button type="button" data-view="billing">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        Billing export
+      </button>
+    </nav>
+
+    <div class="sidefoot">
+      <div class="facility">
+        <b>Rush Creek · Liberty, MO</b>
+        <span>33 doors · 45,000 pallet positions</span>
+        <div class="zonekey">
+          <i style="background:var(--frozen)"></i>
+          <i style="background:var(--cooler)"></i>
+          <i style="background:var(--ambient)"></i>
+        </div>
+        <span style="font-size:10.5px;opacity:.6">Frozen &minus;5&deg;F · Cooler 36&deg;F · Ambient 56&deg;F</span>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="topbar">
+      <div class="crumb"><span>Operations</span><span class="sep">/</span><b id="crumbNow">Dock schedule</b></div>
+      <span class="live"><i></i>Live</span>
+      <span class="spacer"></span>
+      <div class="modesw">
+        <button type="button" aria-pressed="true" data-mode="facility">Facility</button>
+        <button type="button" aria-pressed="false" data-mode="portal">Carrier portal</button>
+      </div>
+      <span class="datepill">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Tue 25 Aug
+      </span>
+      <div class="avatar">JB</div>
+    </div>
+
+    <div class="canvas">
+
+      <!-- ============ VIEW: SCHEDULE ============ -->
+      <section data-pane="schedule">
+        <div class="hero">
+          <div>
+            <span class="k">Receiving office</span>
+            <h1>Every door booked <em>without a phone call.</em></h1>
+            <p>Carriers pick their own slot. The door assigns itself from the right temperature bank. Arrival and departure stamp themselves at the gate.</p>
+          </div>
+          <div class="heronum">
+            <span class="k">Turn time under 2h</span>
+            <span class="val">96.2%</span>
+            <span class="cap">Against a published target of 95%. Measured, not reconstructed.</span>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="tile"><span class="k">Appointments today</span>
+            <div class="row"><span class="v" id="stAppt">—</span><span class="delta up">+7 vs avg</span></div>
+            <span class="n">across 33 doors</span></div>
+          <div class="tile"><span class="k">Booked by carrier</span>
+            <div class="row"><span class="v" id="stSelf">—</span><span class="delta up" id="stSelfD">—</span></div>
+            <span class="n">no call, no clerk</span></div>
+          <div class="tile"><span class="k">Booked by phone</span>
+            <div class="row"><span class="v" id="stPhone">—</span><span class="delta down" id="stPhoneD">—</span></div>
+            <span class="n">each one is a call to answer</span></div>
+          <div class="tile"><span class="k">Median turn</span>
+            <div class="row"><span class="v">1h 24</span><span class="delta up">&minus;18 min</span></div>
+            <span class="n">gate in to gate out</span></div>
+        </div>
+
+        <div class="shead">
+          <h2>Dock schedule</h2>
+          <span class="note">Hover any block for the load. Amber dot = booked by phone.</span>
+        </div>
+
+        <div class="card">
+          <div class="tlbar">
+            <span class="zchip"><i style="background:var(--frozen)"></i>Frozen &middot; doors 01&ndash;14</span>
+            <span class="zchip"><i style="background:var(--cooler)"></i>Cooler &middot; doors 15&ndash;24</span>
+            <span class="zchip"><i style="background:var(--ambient)"></i>Ambient &middot; doors 25&ndash;33</span>
+            <span class="spacer"></span>
+            <span class="zchip"><i style="background:var(--warn);border-radius:50%"></i>Phone booking</span>
+          </div>
+          <div class="tlscroll"><div class="tl">
+            <div class="tlhours"><div class="sp"></div><div class="hrs" id="hrs"></div></div>
+            <div id="lanes"></div>
+          </div></div>
+        </div>
+
+        <div class="lower">
+          <div class="card cardpad">
+            <div class="cardhead"><h3>Turn time under two hours</h3></div>
+            <p class="cardsub">Share of trucks turned inside the published target, last 14 days.</p>
+            <svg class="chart" id="trend" viewBox="0 0 560 208" role="img" aria-label="Line chart of daily turn-time compliance over 14 days rising from 88.4 to 96.2 percent against a 95 percent target."></svg>
+            <div class="chartfoot">
+              <span><b>92.4%</b> 14-day mean</span><span><b>96.2%</b> best day</span>
+              <span><b>88.2%</b> worst day</span><span><b>3 of 14</b> days on target</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardpad" style="padding-bottom:6px">
+              <div class="cardhead"><h3>Door utilisation</h3></div>
+              <p class="cardsub">Booked hours against available, by temperature bank.</p>
+              <div class="util">
+                <div class="ub"><div class="lbl"><b>Frozen</b><span><span id="uFrozen">—</span>% &middot; 14 doors</span></div>
+                  <div class="track"><i style="background:var(--frozen)"></i></div></div>
+                <div class="ub"><div class="lbl"><b>Cooler</b><span><span id="uCooler">—</span>% &middot; 10 doors</span></div>
+                  <div class="track"><i style="background:var(--cooler)"></i></div></div>
+                <div class="ub"><div class="lbl"><b>Ambient</b><span><span id="uAmbient">—</span>% &middot; 9 doors</span></div>
+                  <div class="track"><i style="background:var(--ambient)"></i></div></div>
+              </div>
+            </div>
+            <div style="border-top:1px solid var(--rule);margin-top:16px">
+              <div class="cardpad" style="padding-bottom:4px"><div class="cardhead"><h3>Gate activity</h3></div></div>
+              <div class="feed" id="feed"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="shead"><h2>Today's appointments</h2>
+          <span class="note">The same data as the board above, for anyone who prefers a list.</span></div>
+        <div class="card"><div class="tblwrap">
+          <table class="dt"><thead><tr>
+            <th>Door</th><th>Sched</th><th>Carrier</th><th>Ref</th><th>Zone</th><th>Plt</th>
+            <th>In</th><th>Out</th><th>Turn</th><th>Status</th><th>Booked via</th>
+          </tr></thead><tbody id="tbody"></tbody></table>
+        </div></div>
+      </section>
+
+      <!-- ============ VIEW: RECEIVING ============ -->
+      <section data-pane="receiving" hidden>
+        <div class="hero">
+          <div>
+            <span class="k">Gate &amp; receiving</span>
+            <h1>The gate stamps <em>its own times.</em></h1>
+            <p>A driver scans the reference from their booking. Arrival, door assignment and departure are recorded without anyone re-keying them into the WMS.</p>
+          </div>
+          <div class="heronum">
+            <span class="k">On the dock now</span>
+            <span class="val" id="rcOn" style="color:var(--warn)">—</span>
+            <span class="cap">Trucks currently at a door.</span>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="tile"><span class="k">Checked in today</span>
+            <div class="row"><span class="v" id="rcIn">—</span><span class="delta flat">so far</span></div>
+            <span class="n">gate scans, no clerk entry</span></div>
+          <div class="tile"><span class="k">Closed out</span>
+            <div class="row"><span class="v" id="rcDone">—</span><span class="delta up" id="rcDoneD">—</span></div>
+            <span class="n">inside the 2-hour target</span></div>
+          <div class="tile"><span class="k">Arrived late</span>
+            <div class="row"><span class="v" id="rcLate">—</span><span class="delta down">&gt;15 min</span></div>
+            <span class="n">against booked slot</span></div>
+          <div class="tile"><span class="k">Awaiting arrival</span>
+            <div class="row"><span class="v" id="rcWait">—</span><span class="delta flat">rest of day</span></div>
+            <span class="n">still to come</span></div>
+        </div>
+
+        <div class="shead"><h2>On the dock right now</h2><span class="note">Live at 11:30.</span></div>
+        <div class="card"><div class="tblwrap">
+          <table class="dt"><thead><tr>
+            <th>Door</th><th>Carrier</th><th>Ref</th><th>Zone</th><th>Plt</th>
+            <th>Booked</th><th>Gate in</th><th>Elapsed</th><th>Status</th>
+          </tr></thead><tbody id="rcBody"></tbody></table>
+        </div></div>
+
+        <div class="shead"><h2>Arriving next</h2><span class="note">Next twelve booked slots.</span></div>
+        <div class="card"><div class="tblwrap">
+          <table class="dt"><thead><tr>
+            <th>Sched</th><th>Door</th><th>Carrier</th><th>Ref</th><th>Zone</th><th>Plt</th><th>Direction</th><th>Booked via</th>
+          </tr></thead><tbody id="rcNext"></tbody></table>
+        </div></div>
+      </section>
+
+      <!-- ============ VIEW: CARRIERS ============ -->
+      <section data-pane="carriers" hidden>
+        <div class="hero">
+          <div>
+            <span class="k">Carrier network</span>
+            <h1>Who books themselves, <em>and who still calls.</em></h1>
+            <p>Every carrier that runs a door here, with their onboarding state and how much of their booking they do without picking up the phone.</p>
+          </div>
+          <div class="heronum">
+            <span class="k">Self-service adoption</span>
+            <span class="val" id="caAdopt">—</span>
+            <span class="cap">Share of appointments booked without a call.</span>
+          </div>
+        </div>
+
+        <div class="banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <p><b>Three carriers have no portal login.</b> Every one of their loads has to be booked over the phone by the receiving office. Sending them an invite is the fastest way to move the self-service number.</p>
+        </div>
+
+        <div class="card"><div class="tblwrap">
+          <table class="dt"><thead><tr>
+            <th>Carrier</th><th>MC #</th><th>Portal</th><th>Loads MTD</th><th>Self-service</th>
+            <th>On time</th><th>Avg turn</th><th>Insurance</th><th></th>
+          </tr></thead><tbody id="caBody"></tbody></table>
+        </div></div>
+      </section>
+
+      <!-- ============ VIEW: TEMPS ============ -->
+      <section data-pane="temps" hidden>
+        <div class="hero">
+          <div>
+            <span class="k">Compliance</span>
+            <h1>Probe records that <em>write themselves.</em></h1>
+            <p>Continuous readings by zone, calibration due dates, and an exception log — assembled as it happens rather than reconstructed from a spreadsheet the week an auditor asks.</p>
+          </div>
+          <div class="heronum">
+            <span class="k">Readings in spec</span>
+            <span class="val">99.7%</span>
+            <span class="cap">Rolling 30 days across all probes.</span>
+          </div>
+        </div>
+
+        <div class="banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <p><b>One probe is overdue for calibration and two more fall due inside 14 days.</b> Today that schedule lives in a workbook on one coordinator's machine — and it is the same person who fronts the USDA, FDA and ASI audits.</p>
+        </div>
+
+        <div class="probes" id="probes"></div>
+
+        <div class="shead"><h2>Exception log</h2>
+          <span class="note">Every out-of-spec reading, with what was done about it.</span></div>
+        <div class="card"><div class="tblwrap">
+          <table class="dt"><thead><tr>
+            <th>When</th><th>Probe</th><th>Zone</th><th>Reading</th><th>Spec</th><th>Duration</th><th>Cause</th><th>Action</th><th>Status</th>
+          </tr></thead><tbody id="tpBody"></tbody></table>
+        </div></div>
+
+        <div class="shead"><h2>Calibration schedule</h2>
+          <span class="note">49 CFR-style record retention, generated rather than typed.</span></div>
+        <div class="card"><div class="tblwrap">
+          <table class="dt"><thead><tr>
+            <th>Probe</th><th>Location</th><th>Last calibrated</th><th>By</th><th>Interval</th><th>Next due</th><th>Status</th>
+          </tr></thead><tbody id="calBody"></tbody></table>
+        </div></div>
+      </section>
+
+      <!-- ============ VIEW: REPORTS ============ -->
+      <section data-pane="reports" hidden>
+        <div class="hero">
+          <div>
+            <span class="k">Turn-time reports</span>
+            <h1>The number you publish, <em>defensible on demand.</em></h1>
+            <p>Turn time measured from gate scan to gate scan. When a customer audits the 95% claim, the evidence is already assembled.</p>
+          </div>
+          <div class="heronum">
+            <span class="k">Rolling 14-day mean</span>
+            <span class="val">92.4%</span>
+            <span class="cap">Trending up. Three of the last fourteen days cleared target.</span>
+          </div>
+        </div>
+
+        <div class="two">
+          <div class="card cardpad">
+            <div class="cardhead"><h3>Compliance trend</h3></div>
+            <p class="cardsub">Share of trucks turned inside two hours, by day.</p>
+            <svg class="chart" id="trend2" viewBox="0 0 560 208" role="img" aria-label="Line chart of daily turn-time compliance over 14 days."></svg>
+          </div>
+          <div class="card cardpad">
+            <div class="cardhead"><h3>Turn time by zone</h3></div>
+            <p class="cardsub">Median minutes from gate in to gate out, this week.</p>
+            <svg class="chart" id="zoneBars" viewBox="0 0 560 208" role="img" aria-label="Bar chart of median turn time by temperature zone: frozen 96 minutes, cooler 78 minutes, ambient 64 minutes."></svg>
+          </div>
+        </div>
+
+        <div class="shead"><h2>Where the time goes</h2>
+          <span class="note">Median minutes per stage, from the gate scans.</span></div>
+        <div class="card"><div class="tblwrap">
+          <table class="dt"><thead><tr>
+            <th>Stage</th><th>Frozen</th><th>Cooler</th><th>Ambient</th><th>All zones</th><th>Change vs last week</th>
+          </tr></thead><tbody id="rpBody"></tbody></table>
+        </div></div>
+      </section>
+
+      <!-- ============ VIEW: BILLING ============ -->
+      <section data-pane="billing" hidden>
+        <div class="hero">
+          <div>
+            <span class="k">Billing export</span>
+            <h1>Handling charges captured <em>as they happen.</em></h1>
+            <p>Door time, detention and accessorials recorded at the gate instead of reconstructed at month end from tallies and memory.</p>
+          </div>
+          <div class="heronum">
+            <span class="k">Billable this month</span>
+            <span class="val" style="color:var(--accent)">$184k</span>
+            <span class="cap">Of which $21k is detention that used to go uncharged.</span>
+          </div>
+        </div>
+
+        <div class="banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <p><b>Detention is the line item that goes missing.</b> When arrival and departure are stamped at the gate, every truck over its free time is billable evidence rather than an argument.</p>
+        </div>
+
+        <div class="card"><div class="tblwrap">
+          <table class="dt"><thead><tr>
+            <th>Customer</th><th>Loads</th><th>Door hours</th><th>Detention hrs</th>
+            <th>Handling</th><th>Detention</th><th>Total</th><th>Status</th>
+          </tr></thead><tbody id="blBody"></tbody></table>
+        </div></div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center">
+          <button class="btn pri" type="button">Export to Ramp</button>
+          <button class="btn" type="button">Download CSV</button>
+          <span style="font-size:12.5px;color:var(--ink-faint)">Concept only — these buttons do nothing.</span>
+        </div>
+      </section>
+
+      <footer class="pitch">
+        <p><strong>What this is.</strong> A working concept for one process — carrier-facing dock appointment booking, with driver check-in and check-out captured at the gate. Built to show the workflow, not as production software. Nothing here connects to a real system.</p>
+        <p><strong>Why this process.</strong> Ramp Enterprise WMS has no dock-scheduling module for inbound freight that doesn't arrive over EDI — a gap its own users raise publicly. That gap is why an Appointment/CSR is needed to answer phones, book doors, prepare tallies and key driver arrival and departure times back into the WMS by hand.</p>
+        <p><strong>Every carrier name, reference, pallet count, temperature and dollar figure on this page is invented</strong> for demonstration. No real customer, shipment or operational data from Cold Solutions was used, and none of these figures should be read as a claim about their actual performance.</p>
+      </footer>
+    </div>
+  </main>
+</div>
+
+<!-- ==================== CARRIER PORTAL ==================== -->
+<div class="portal" id="appPortal" hidden>
+  <div class="phead">
+    <div class="pnav">
+      <div class="pbrand">
+        <div class="mk">RC</div>
+        <div><b>Rush Creek Carrier Portal</b><span>Liberty, MO · 33 doors</span></div>
+      </div>
+      <span class="spacer"></span>
+      <div class="ptabs" id="ptabs">
+        <button type="button" aria-selected="true" data-ptab="book">Book a door</button>
+        <button type="button" aria-selected="false" data-ptab="mine">My appointments</button>
+      </div>
+      <div class="modesw">
+        <button type="button" aria-pressed="false" data-mode="facility">Facility</button>
+        <button type="button" aria-pressed="true" data-mode="portal">Carrier portal</button>
+      </div>
+    </div>
+
+    <div class="phero" id="phero">
+      <h1>Book your door in <em>forty seconds.</em></h1>
+      <p>No phone call, no waiting for the receiving office to open. Pick your zone and your time — the door is assigned and held for you.</p>
+      <div class="trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Open 24/7</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Instant confirmation</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Gate pass on your phone</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pbody">
+
+    <!-- ---- BOOK ---- -->
+    <div data-ptabpane="book">
+      <div class="pcard">
+        <div class="steps" id="steps">
+          <div class="stp on" data-step="1"><span class="no">1</span><span class="lb">Your load</span></div>
+          <div class="stp" data-step="2"><span class="no">2</span><span class="lb">Pick a time</span></div>
+          <div class="stp" data-step="3"><span class="no">3</span><span class="lb">Confirm</span></div>
+          <div class="stp" data-step="4"><span class="no">4</span><span class="lb">Gate pass</span></div>
+        </div>
+
+        <!-- step 1 -->
+        <div class="pstep" data-pstep="1">
+          <h2>Tell us about the load</h2>
+          <p class="sub">We use this to put you on a door in the right temperature bank, so you're not moved after you arrive.</p>
+
+          <div class="grid2">
+            <div class="field"><label for="p-carrier">Carrier</label>
+              <input id="p-carrier" type="text" value="Prairie Line Transport" autocomplete="off"></div>
+            <div class="field"><label for="p-mc">MC number</label>
+              <input id="p-mc" type="text" value="MC-884210" autocomplete="off"></div>
+          </div>
+
+          <div class="grid2">
+            <div class="field"><label for="p-ref">PO / load reference</label>
+              <input id="p-ref" type="text" value="PO-4471B" autocomplete="off"></div>
+            <div class="field"><label for="p-plt">Pallets</label>
+              <input id="p-plt" type="number" min="1" max="30" value="22"></div>
+          </div>
+
+          <div class="grid2">
+            <div class="field"><label for="p-dir">Direction</label>
+              <select id="p-dir">
+                <option value="Inbound">Inbound — delivering to Rush Creek</option>
+                <option value="Outbound">Outbound — collecting from Rush Creek</option>
+              </select></div>
+            <div class="field"><label for="p-driver">Driver name</label>
+              <input id="p-driver" type="text" value="R. Alvarez" autocomplete="off"></div>
+          </div>
+
+          <div class="field" style="margin-bottom:6px"><label>Temperature zone</label>
+            <div class="zones" id="pzones">
+              <button class="zone" type="button" data-zone="frozen" aria-pressed="true">
+                <span class="zn">Frozen</span><span class="zt">&minus;5&deg;F</span><span class="zd">Doors 01&ndash;14</span></button>
+              <button class="zone" type="button" data-zone="cooler" aria-pressed="false">
+                <span class="zn">Cooler</span><span class="zt">36&deg;F</span><span class="zd">Doors 15&ndash;24</span></button>
+              <button class="zone" type="button" data-zone="ambient" aria-pressed="false">
+                <span class="zn">Ambient</span><span class="zt">56&deg;F</span><span class="zd">Doors 25&ndash;33</span></button>
+            </div>
+          </div>
+
+          <div class="pactions">
+            <button class="btn pri lg" type="button" id="toStep2">Find a time</button>
+            <span style="font-size:13px;color:var(--ink-faint)">Takes about 40 seconds.</span>
+          </div>
+        </div>
+
+        <!-- step 2 -->
+        <div class="pstep" data-pstep="2" hidden>
+          <h2>Pick your arrival time</h2>
+          <p class="sub" id="p2sub">Live availability in the frozen bank. Times shown are when you should be at the gate.</p>
+
+          <div class="daybar" id="daybar"></div>
+
+          <div class="slotsec">
+            <h4>Morning</h4>
+            <div class="slotgrid" id="slotsAM"></div>
+          </div>
+          <div class="slotsec">
+            <h4>Afternoon</h4>
+            <div class="slotgrid" id="slotsPM"></div>
+          </div>
+
+          <div class="pactions">
+            <button class="btn" type="button" data-back="1">Back</button>
+            <button class="btn pri lg" type="button" id="toStep3" disabled>Review booking</button>
+            <span id="p2hint" style="font-size:13px;color:var(--ink-faint)">Choose a time to continue.</span>
+          </div>
+        </div>
+
+        <!-- step 3 -->
+        <div class="pstep" data-pstep="3" hidden>
+          <h2>Check it over</h2>
+          <p class="sub">Your door is held while you review. Nothing is charged and you can change it later from My appointments.</p>
+          <dl class="review" id="review"></dl>
+          <div class="pactions">
+            <button class="btn" type="button" data-back="2">Back</button>
+            <button class="btn pri lg" type="button" id="toStep4">Confirm booking</button>
+          </div>
+        </div>
+
+        <!-- step 4 -->
+        <div class="pstep" data-pstep="4" hidden>
+          <h2>You're booked</h2>
+          <p class="sub">Show this at the gate. Scanning it stamps your arrival — and your departure when you leave.</p>
+          <div id="passBox"></div>
+          <div class="pactions">
+            <button class="btn pri" type="button" id="seeMine">View my appointments</button>
+            <button class="btn" type="button" id="bookAnother">Book another door</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- MY APPOINTMENTS ---- -->
+    <div data-ptabpane="mine" hidden>
+      <div class="shead" style="margin-top:6px">
+        <h2 style="font-size:24px">Your appointments</h2>
+        <span class="note">Prairie Line Transport · MC-884210</span>
+      </div>
+      <div class="apptlist" id="mineList"></div>
+    </div>
+  </div>
+
+  <footer class="pitch" style="max-width:1000px;margin:0 auto;width:100%">
+    <p><strong>What this is.</strong> The carrier-facing half of the same concept — the screen a driver or dispatcher uses instead of calling the receiving office. Built to show the workflow, not as production software.</p>
+    <p><strong>Why it matters more than the dashboard.</strong> The facility does not make the phone ring; the carrier does. Every load booked here is a call the Appointment/CSR never takes and a WMS entry nobody re-keys.</p>
+    <p><strong>Every carrier, reference and time is invented</strong> for demonstration. No real Cold Solutions data was used.</p>
+  </footer>
+</div>
+
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(i){ return document.getElementById(i); };
+  var qs = function(s,r){ return (r||document).querySelector(s); };
+  var qsa = function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  var pad = function(n){ return (n<10?"0":"")+n; };
+  var esc = function(s){ return String(s).replace(/[&<>"]/g,function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+
+  var ZONES = {
+    frozen :{label:"Frozen", lo:1, hi:14, temp:"−5°F"},
+    cooler :{label:"Cooler", lo:15,hi:24, temp:"36°F"},
+    ambient:{label:"Ambient",lo:25,hi:33, temp:"56°F"}
+  };
+  var zoneOf = function(d){ return d<=14?"frozen":d<=24?"cooler":"ambient"; };
+
+  var DAY_START=360, DAY_END=1080, NOW=690;
+  var toHM = function(m){ return pad(Math.floor(m/60))+":"+pad(m%60); };
+  var pct  = function(m){ return (m-DAY_START)/(DAY_END-DAY_START)*100; };
+
+  /* ---------------- sample data ---------------- */
+  var sv = 20260825;
+  function rnd(){ sv=(sv*1103515245+12345)&0x7fffffff; return sv/0x7fffffff; }
+  function pick(a){ return a[Math.floor(rnd()*a.length)]; }
+
+  var CARRIERS=["Heartland Cold Carriers","Meridian Foods Transit","Bluestem Dry Freight",
+    "Northgate Refrigerated","Kaw Valley Haulage","Silverline Chilled","Grainbelt Logistics",
+    "Ridgeway Temp Control","Prairie Line Transport","Cimarron Freight Co."];
+
+  var appts=[], poN=4400, soN=8800;
+  (function(){
+    for(var door=1; door<=33; door++){
+      var z=zoneOf(door), load = z==="frozen"?.52:z==="cooler"?.40:.30;
+      var t=DAY_START+Math.floor(rnd()*90);
+      while(t<DAY_END-90){
+        if(rnd()<load){
+          var dur=75+Math.floor(rnd()*3)*15;
+          if(t+dur>DAY_END) break;
+          var inb=rnd()<.62;
+          var a={door:door,zone:z,sched:t,dur:dur,carrier:pick(CARRIERS),
+            ref:(inb?"PO-":"SO-")+(inb?(++poN):(++soN)),plt:8+Math.floor(rnd()*23),
+            via:rnd()<.26?"phone":"self",dir:inb?"Inbound":"Outbound",fresh:false};
+          if(t+dur<=NOW){
+            a.in=t+Math.floor(rnd()*16)-6;
+            a.out=a.in+(rnd()<.09?126+Math.floor(rnd()*32):52+Math.floor(rnd()*62));
+          }else if(t<=NOW){ a.in=t+Math.floor(rnd()*12)-4; a.out=null; }
+          else{ a.in=null; a.out=null; }
+          appts.push(a);
+          t+=dur+45+Math.floor(rnd()*5)*15;
+        }else t+=75;
+      }
+    }
+  })();
+
+  var turnMin=function(a){ return (a.in!=null&&a.out!=null)?a.out-a.in:null; };
+  function statusOf(a){
+    if(a.in==null) return "sched";
+    if(a.out==null) return "ondock";
+    return turnMin(a)>120?"over":"closed";
+  }
+  function stChip(st){
+    return st==="closed"?'<span class="chip ok">Closed</span>'
+         : st==="over"  ?'<span class="chip late">Over</span>'
+         : st==="ondock"?'<span class="chip warn">On dock</span>'
+         :               '<span class="chip sched">Scheduled</span>';
+  }
+  function zChip(z){ return '<span class="chip '+z+'"><i></i>'+ZONES[z].label+'</span>'; }
+  function fmtT(m){ return m==null?"—":Math.floor(m/60)+"h "+pad(m%60); }
+
+  /* ---------------- tooltip ---------------- */
+  var tip=$("tip");
+  function moveTip(e){
+    var x=e.clientX+16,y=e.clientY+16,r=tip.getBoundingClientRect();
+    if(x+r.width>window.innerWidth-12) x=e.clientX-r.width-16;
+    if(y+r.height>window.innerHeight-12) y=e.clientY-r.height-16;
+    tip.style.left=x+"px"; tip.style.top=y+"px";
+  }
+  function hideTip(){ tip.classList.remove("on"); }
+
+  /* ---------------- timeline ---------------- */
+  (function(){ var h=$("hrs"); for(var i=6;i<18;i++){
+    var d=document.createElement("div"); d.className="hr"; d.textContent=pad(i)+":00"; h.appendChild(d);} })();
+
+  function drawLanes(){
+    var host=$("lanes"); host.innerHTML="";
+    ["frozen","cooler","ambient"].forEach(function(z){
+      var zc=ZONES[z], band=document.createElement("div");
+      band.className="zoneband";
+      band.innerHTML='<i style="background:var(--'+z+')"></i>'+zc.label+
+        ' bank<em>Doors '+pad(zc.lo)+'–'+pad(zc.hi)+' · '+zc.temp+'</em>';
+      host.appendChild(band);
+      for(var d=zc.lo; d<=zc.hi; d++){
+        var row=document.createElement("div"); row.className="drow";
+        var lab=document.createElement("div"); lab.className="dlabel";
+        lab.innerHTML='<span class="zd" style="background:var(--'+z+')"></span>'+pad(d);
+        row.appendChild(lab);
+        var lane=document.createElement("div"); lane.className="dlane";
+        appts.filter(function(a){return a.door===d;}).forEach(function(a){
+          var b=document.createElement("div");
+          b.className="appt "+a.zone+(a.via==="phone"?" phone":"")+(a.fresh?" new":"");
+          b.style.left=pct(a.sched)+"%";
+          b.style.width=(a.dur/(DAY_END-DAY_START)*100)+"%";
+          b.innerHTML='<span class="t">'+toHM(a.sched)+'</span>'+esc(a.carrier.split(" ")[0]);
+          b.addEventListener("mouseenter",function(){
+            var st=statusOf(a),tm=turnMin(a);
+            tip.innerHTML="<b>"+esc(a.carrier)+"</b><dl>"+
+              "<dt>Door</dt><dd>"+pad(a.door)+" · "+ZONES[a.zone].label+"</dd>"+
+              "<dt>Ref</dt><dd>"+esc(a.ref)+"</dd>"+
+              "<dt>Sched</dt><dd>"+toHM(a.sched)+" · "+a.dir+"</dd>"+
+              "<dt>Pallets</dt><dd>"+a.plt+"</dd>"+
+              "<dt>In / Out</dt><dd>"+(a.in!=null?toHM(a.in):"—")+" / "+(a.out!=null?toHM(a.out):"—")+"</dd>"+
+              "<dt>Turn</dt><dd>"+(tm!=null?fmtT(tm):(st==="ondock"?"running":"—"))+"</dd>"+
+              "<dt>Booked</dt><dd>"+(a.via==="phone"?"Phone call":"Self-service")+"</dd></dl>";
+            tip.classList.add("on");
+          });
+          b.addEventListener("mousemove",moveTip);
+          b.addEventListener("mouseleave",hideTip);
+          lane.appendChild(b); a.fresh=false;
+        });
+        var nl=document.createElement("div"); nl.className="nowline";
+        nl.style.left=pct(NOW)+"%";
+        if(!(z==="frozen"&&d===zc.lo)) nl.classList.add("nocap");
+        lane.appendChild(nl); row.appendChild(lane); host.appendChild(row);
+      }
+    });
+  }
+
+  function drawTable(){
+    var b=$("tbody"); b.innerHTML="";
+    appts.slice()
+      .sort(function(x,y){ return Math.abs(x.sched-NOW)-Math.abs(y.sched-NOW); })
+      .slice(0,26)
+      .sort(function(x,y){ return x.sched-y.sched||x.door-y.door; })
+      .forEach(function(a){
+        var st=statusOf(a),tm=turnMin(a),tr=document.createElement("tr");
+        if(a.justAdded){ tr.className="fresh"; a.justAdded=false; }
+        tr.innerHTML='<td class="mono" style="font-weight:600">'+pad(a.door)+'</td>'+
+          '<td class="mono">'+toHM(a.sched)+'</td><td class="nm">'+esc(a.carrier)+'</td>'+
+          '<td class="mono">'+esc(a.ref)+'</td><td>'+zChip(a.zone)+'</td>'+
+          '<td class="mono">'+a.plt+'</td>'+
+          '<td class="mono">'+(a.in!=null?toHM(a.in):"—")+'</td>'+
+          '<td class="mono">'+(a.out!=null?toHM(a.out):"—")+'</td>'+
+          '<td class="mono">'+(tm!=null?fmtT(tm):(st==="ondock"?"running":"—"))+'</td>'+
+          '<td>'+stChip(st)+'</td>'+
+          '<td>'+(a.via==="phone"?'<span class="via phone">Phone call</span>':'<span class="via">Self-service</span>')+'</td>';
+        b.appendChild(tr);
+      });
+  }
+
+  /* ---------------- charts ---------------- */
+  var TREND=[88.4,89.1,88.2,90.6,91.3,90.8,92.4,93.1,92.6,94.2,94.9,95.3,95.8,96.2];
+  var TDAYS=["14 d ago","13 d","12 d","11 d","10 d","9 d","8 d","7 d","6 d","5 d","4 d","3 d","Yesterday","Today"];
+
+  function drawTrend(id){
+    var data=TREND,W=560,H=208,L=40,R=16,T=30,B=30,iw=W-L-R,ih=H-T-B,lo=86,hi=98;
+    var x=function(i){return L+(i/(data.length-1))*iw;};
+    var y=function(v){return T+(1-(v-lo)/(hi-lo))*ih;};
+    var s='<defs><linearGradient id="ag'+id+'" x1="0" y1="0" x2="0" y2="1">'+
+      '<stop offset="0%" stop-color="var(--accent)" stop-opacity=".2"/>'+
+      '<stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>';
+    [88,91,94,97].forEach(function(v){
+      s+='<line class="gridline" x1="'+L+'" y1="'+y(v)+'" x2="'+(W-R)+'" y2="'+y(v)+'"/>'+
+         '<text class="axis" x="'+(L-9)+'" y="'+(y(v)+3)+'" text-anchor="end">'+v+'%</text>';
+    });
+    s+='<line x1="'+L+'" y1="'+y(95)+'" x2="'+(W-R)+'" y2="'+y(95)+
+       '" stroke="var(--ok)" stroke-width="1.5" stroke-dasharray="4 4" opacity=".8"/>'+
+       '<text class="axis" x="'+(L+5)+'" y="'+(y(95)-7)+'" text-anchor="start" fill="var(--ok)" style="font-weight:600">Target 95%</text>';
+    var ar='M'+x(0)+' '+y(data[0]); data.forEach(function(v,i){ if(i) ar+=' L'+x(i)+' '+y(v); });
+    ar+=' L'+x(13)+' '+(T+ih)+' L'+x(0)+' '+(T+ih)+' Z';
+    s+='<path d="'+ar+'" fill="url(#ag'+id+')"/>';
+    var ln='M'+x(0)+' '+y(data[0]); data.forEach(function(v,i){ if(i) ln+=' L'+x(i)+' '+y(v); });
+    s+='<path d="'+ln+'" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>';
+    s+='<g class="xh" opacity="0"><line class="xhl" y1="'+T+'" y2="'+(T+ih)+'" stroke="var(--rule-hard)" stroke-width="1"/>'+
+       '<circle class="xhd" r="5" fill="var(--accent)" stroke="var(--panel)" stroke-width="2"/></g>';
+    s+='<circle cx="'+x(13)+'" cy="'+y(data[13])+'" r="5" fill="var(--accent)" stroke="var(--panel)" stroke-width="2"/>'+
+       '<text x="'+x(13)+'" y="'+(y(data[13])-13)+'" text-anchor="end" fill="var(--ink)" '+
+       'style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;font-weight:600">96.2%</text>';
+    ["14 d ago","10 d","6 d","Today"].forEach(function(t,i){
+      var ix=[0,4,8,13][i];
+      s+='<text class="axis" x="'+x(ix)+'" y="'+(H-9)+'" text-anchor="'+(i===0?'start':i===3?'end':'middle')+'">'+t+'</text>';
+    });
+    data.forEach(function(v,i){
+      s+='<rect x="'+(x(i)-iw/26)+'" y="'+T+'" width="'+(iw/13)+'" height="'+ih+'" fill="transparent" data-i="'+i+'"/>';
+    });
+    var svg=$(id); if(!svg) return;
+    svg.innerHTML=s;
+    var g=qs(".xh",svg), gl=qs(".xhl",svg), gd=qs(".xhd",svg);
+    qsa("rect[data-i]",svg).forEach(function(r){
+      r.addEventListener("mouseenter",function(){
+        var i=+r.getAttribute("data-i");
+        gl.setAttribute("x1",x(i)); gl.setAttribute("x2",x(i));
+        gd.setAttribute("cx",x(i)); gd.setAttribute("cy",y(data[i]));
+        g.setAttribute("opacity","1");
+        tip.innerHTML="<b>"+TDAYS[i]+"</b><dl><dt>Under 2h</dt><dd>"+data[i].toFixed(1)+"%</dd>"+
+          "<dt>vs target</dt><dd>"+(data[i]>=95?"+":"")+(data[i]-95).toFixed(1)+" pts</dd></dl>";
+        tip.classList.add("on");
+      });
+      r.addEventListener("mousemove",moveTip);
+      r.addEventListener("mouseleave",function(){ g.setAttribute("opacity","0"); hideTip(); });
+    });
+  }
+
+  function drawZoneBars(){
+    var rows=[{z:"frozen",v:96},{z:"cooler",v:78},{z:"ambient",v:64}];
+    var W=560,H=208,L=76,R=54,T=18,B=26,iw=W-L-R,ih=H-T-B;
+    var max=120, bh=30, gap=(ih-rows.length*bh)/(rows.length-1);
+    var s='';
+    [0,30,60,90,120].forEach(function(v){
+      var gx=L+v/max*iw;
+      s+='<line class="gridline" x1="'+gx+'" y1="'+T+'" x2="'+gx+'" y2="'+(T+ih)+'"/>'+
+         '<text class="axis" x="'+gx+'" y="'+(H-9)+'" text-anchor="middle">'+v+'</text>';
+    });
+    s+='<line x1="'+(L+120/max*iw)+'" y1="'+T+'" x2="'+(L+120/max*iw)+'" y2="'+(T+ih)+
+       '" stroke="var(--late)" stroke-width="1.5" stroke-dasharray="4 4"/>';
+    rows.forEach(function(r,i){
+      var yy=T+i*(bh+gap), w=r.v/max*iw;
+      s+='<text class="axis" x="'+(L-11)+'" y="'+(yy+bh/2+4)+'" text-anchor="end" '+
+         'style="font-size:11.5px;font-family:Archivo,sans-serif;font-weight:600;fill:var(--ink)">'+ZONES[r.z].label+'</text>';
+      s+='<rect x="'+L+'" y="'+yy+'" width="'+w+'" height="'+bh+'" rx="4" fill="var(--'+r.z+')"/>';
+      s+='<text x="'+(L+w+9)+'" y="'+(yy+bh/2+4)+'" '+
+         'style="font-size:12px;font-family:\'IBM Plex Mono\',monospace;font-weight:600;fill:var(--ink)">'+r.v+' min</text>';
+    });
+    s+='<text class="axis" x="'+(L+iw)+'" y="'+(T-5)+'" text-anchor="end" fill="var(--late)" style="font-weight:600">2h target</text>';
+    var svg=$("zoneBars"); if(svg) svg.innerHTML=s;
+  }
+
+  function spark(vals, colour){
+    var W=150,H=34,lo=Math.min.apply(null,vals)-.6,hi=Math.max.apply(null,vals)+.6;
+    var x=function(i){return i/(vals.length-1)*W;};
+    var y=function(v){return H-(v-lo)/(hi-lo)*H;};
+    var d='M'+x(0)+' '+y(vals[0]);
+    vals.forEach(function(v,i){ if(i) d+=' L'+x(i)+' '+y(v); });
+    return '<svg class="spark" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true">'+
+      '<path d="'+d+'" fill="none" stroke="var(--'+colour+')" stroke-width="1.6" '+
+      'stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>';
+  }
+
+  /* ---------------- feed ---------------- */
+  var feedItems=[
+    ["ok","11:26","<b>Door 07</b> closed out &mdash; Northgate Refrigerated, 1h 42 turn"],
+    ["acc","11:19","<b>Bluestem Dry Freight</b> booked door 28 for 14:30, self-service"],
+    ["warn","11:04","<b>Door 11</b> arrived 35 min late &mdash; Kaw Valley Haulage"],
+    ["ok","10:58","<b>Door 19</b> gate-out stamped, 1h 11 turn"],
+    ["acc","10:41","<b>Meridian Foods Transit</b> rescheduled SO-8821 to 12:30"],
+    ["ok","10:22","<b>Door 02</b> gate-in stamped, 4 min early"],
+    ["warn","10:05","Phone booking taken for door 25 &mdash; carrier had no portal login"],
+    ["ok","09:47","<b>Door 30</b> closed out &mdash; 1h 13 turn"]
+  ];
+  function drawFeed(){
+    var f=$("feed"); f.innerHTML="";
+    feedItems.forEach(function(it){
+      var d=document.createElement("div"); d.className="fitem "+it[0];
+      d.innerHTML='<span class="dot"></span><div class="bd"><p>'+it[2]+'</p><time>'+it[1]+'</time></div>';
+      f.appendChild(d);
+    });
+  }
+
+  /* ---------------- receiving ---------------- */
+  function drawReceiving(){
+    var onDock=appts.filter(function(a){ return statusOf(a)==="ondock"; })
+                    .sort(function(x,y){ return x.in-y.in; });
+    var done  =appts.filter(function(a){ return turnMin(a)!=null; });
+    var good  =done.filter(function(a){ return turnMin(a)<=120; });
+    var late  =appts.filter(function(a){ return a.in!=null && a.in-a.sched>15; });
+    var wait  =appts.filter(function(a){ return a.in==null; });
+
+    $("rcOn").textContent=onDock.length;
+    $("rcIn").textContent=done.length+onDock.length;
+    $("rcDone").textContent=good.length;
+    $("rcDoneD").textContent=Math.round(good.length/done.length*100)+"%";
+    $("rcLate").textContent=late.length;
+    $("rcWait").textContent=wait.length;
+    $("navGate").textContent=onDock.length;
+
+    var b=$("rcBody"); b.innerHTML="";
+    onDock.forEach(function(a){
+      var el=NOW-a.in;
+      var chip=el>120?'<span class="chip late">Over target</span>'
+             : el>95 ?'<span class="chip warn">Approaching</span>'
+             :        '<span class="chip ok">In progress</span>';
+      b.innerHTML+='<tr><td class="mono" style="font-weight:600">'+pad(a.door)+'</td>'+
+        '<td class="nm">'+esc(a.carrier)+'</td><td class="mono">'+esc(a.ref)+'</td>'+
+        '<td>'+zChip(a.zone)+'</td><td class="mono">'+a.plt+'</td>'+
+        '<td class="mono">'+toHM(a.sched)+'</td><td class="mono">'+toHM(a.in)+'</td>'+
+        '<td class="mono">'+fmtT(el)+'</td><td>'+chip+'</td></tr>';
+    });
+    if(!onDock.length) b.innerHTML='<tr><td colspan="9" style="color:var(--ink-faint)">No trucks on a door right now.</td></tr>';
+
+    var n=$("rcNext"); n.innerHTML="";
+    appts.filter(function(a){ return a.in==null; })
+      .sort(function(x,y){ return x.sched-y.sched; }).slice(0,12)
+      .forEach(function(a){
+        n.innerHTML+='<tr><td class="mono">'+toHM(a.sched)+'</td>'+
+          '<td class="mono" style="font-weight:600">'+pad(a.door)+'</td>'+
+          '<td class="nm">'+esc(a.carrier)+'</td><td class="mono">'+esc(a.ref)+'</td>'+
+          '<td>'+zChip(a.zone)+'</td><td class="mono">'+a.plt+'</td><td>'+a.dir+'</td>'+
+          '<td>'+(a.via==="phone"?'<span class="via phone">Phone call</span>':'<span class="via">Self-service</span>')+'</td></tr>';
+      });
+  }
+
+  /* ---------------- carriers ---------------- */
+  function drawCarriers(){
+    var rows=CARRIERS.map(function(nm,i){
+      var mine=appts.filter(function(a){ return a.carrier===nm; });
+      var self=mine.filter(function(a){ return a.via==="self"; }).length;
+      var portal=[8,6,3].indexOf(i)>-1 ? "none" : (i===9 ? "invited" : "active");
+      var done=mine.filter(function(a){ return turnMin(a)!=null; });
+      var avg=done.length ? Math.round(done.reduce(function(s,a){ return s+turnMin(a); },0)/done.length) : null;
+      var ontime=mine.filter(function(a){ return a.in!=null && a.in-a.sched<=15; }).length;
+      return {nm:nm, mc:"MC-"+(710000+i*4137), portal:portal,
+        loads:mine.length*4+7, self:mine.length?Math.round(self/mine.length*100):0,
+        ontime:mine.length?Math.round(ontime/Math.max(1,mine.filter(function(a){return a.in!=null;}).length)*100):0,
+        avg:avg, ins:i===3?"Expires 14 d":"Current"};
+    }).sort(function(a,b){ return a.self-b.self; });
+
+    var b=$("caBody"); b.innerHTML="";
+    rows.forEach(function(r){
+      var pc = r.portal==="active" ?'<span class="chip ok">Active</span>'
+             : r.portal==="invited"?'<span class="chip warn">Invited</span>'
+             :                      '<span class="chip late">No login</span>';
+      var sc = r.self>=70?"ok":r.self>=40?"warn":"late";
+      b.innerHTML+='<tr><td class="nm">'+esc(r.nm)+'</td>'+
+        '<td class="mono">'+r.mc+'</td><td>'+pc+'</td>'+
+        '<td class="mono">'+r.loads+'</td>'+
+        '<td><span class="chip '+sc+'">'+r.self+'%</span></td>'+
+        '<td class="mono">'+r.ontime+'%</td>'+
+        '<td class="mono">'+(r.avg!=null?fmtT(r.avg):"—")+'</td>'+
+        '<td>'+(r.ins==="Current"?'<span class="via">Current</span>':'<span class="via phone">'+r.ins+'</span>')+'</td>'+
+        '<td>'+(r.portal==="none"?'<button class="btn sm" type="button">Send invite</button>':'')+'</td></tr>';
+    });
+
+    var tot=appts.length, sf=appts.filter(function(a){ return a.via==="self"; }).length;
+    $("caAdopt").textContent=Math.round(sf/tot*100)+"%";
+  }
+
+  /* ---------------- temperature ---------------- */
+  function drawTemps(){
+    var probes=[
+      {id:"FR-01",z:"frozen", loc:"Freezer bank A",  rd:-5.4, tgt:"−5 ± 2°F", ok:true,
+       s:[-5.1,-5.3,-5.6,-5.2,-4.9,-5.4,-5.5,-5.2,-5.4]},
+      {id:"FR-02",z:"frozen", loc:"Freezer bank B",  rd:-4.8, tgt:"−5 ± 2°F", ok:true,
+       s:[-5.0,-4.7,-4.9,-5.1,-4.6,-4.8,-5.0,-4.7,-4.8]},
+      {id:"CL-01",z:"cooler", loc:"Cooler bank",     rd:36.4, tgt:"36 ± 2°F", ok:true,
+       s:[36.1,36.3,36.6,36.2,35.9,36.4,36.5,36.2,36.4]},
+      {id:"CL-02",z:"cooler", loc:"Cooler dock apron",rd:38.9,tgt:"36 ± 2°F", ok:false,
+       s:[36.4,36.8,37.5,38.2,39.1,38.6,38.2,38.7,38.9]},
+      {id:"AM-01",z:"ambient",loc:"Dry storage",     rd:55.7, tgt:"56 ± 4°F", ok:true,
+       s:[55.9,56.2,55.4,55.8,56.1,55.6,55.5,55.9,55.7]},
+      {id:"BL-01",z:"frozen", loc:"Blast cell 1",    rd:-21.3,tgt:"−20 ± 3°F",ok:true,
+       s:[-20.8,-21.1,-21.4,-20.9,-21.2,-21.5,-21.0,-21.2,-21.3]}
+    ];
+    var host=$("probes"); host.innerHTML="";
+    probes.forEach(function(p){
+      var d=document.createElement("div"); d.className="probe";
+      d.innerHTML='<div style="display:flex;align-items:center;justify-content:space-between;gap:8px">'+
+          '<span class="k">'+p.id+'</span>'+
+          (p.ok?'<span class="chip ok">In spec</span>':'<span class="chip warn">Drifting</span>')+'</div>'+
+        '<span class="rd" style="color:var(--'+(p.ok?"ink":"warn")+')">'+p.rd.toFixed(1)+'&deg;F</span>'+
+        spark(p.s, p.ok?p.z:"warn")+
+        '<span class="tg">'+esc(p.loc)+' &middot; '+p.tgt+'</span>';
+      host.appendChild(d);
+    });
+
+    var ex=[
+      ["25 Aug 09:12","CL-02","cooler","38.9°F","36 ± 2°F","1h 06","Dock door held open during a 22-pallet transfer","Door closed, load split","open"],
+      ["23 Aug 14:47","FR-02","frozen","−2.1°F","−5 ± 2°F","0h 22","Defrost cycle overlap","Cycle rescheduled","closed"],
+      ["21 Aug 03:05","CL-01","cooler","39.4°F","36 ± 2°F","0h 41","Evaporator fan fault","Fan replaced, probe re-checked","closed"],
+      ["18 Aug 11:30","AM-01","ambient","61.8°F","56 ± 4°F","2h 14","External ambient spike, 98°F outside","Monitored, product unaffected","closed"]
+    ];
+    var b=$("tpBody"); b.innerHTML="";
+    ex.forEach(function(r){
+      b.innerHTML+='<tr><td class="mono">'+r[0]+'</td><td class="mono">'+r[1]+'</td>'+
+        '<td>'+zChip(r[2])+'</td><td class="mono" style="color:var(--warn);font-weight:600">'+r[3]+'</td>'+
+        '<td class="mono">'+r[4]+'</td><td class="mono">'+r[5]+'</td>'+
+        '<td style="white-space:normal;min-width:200px">'+r[6]+'</td>'+
+        '<td style="white-space:normal;min-width:170px">'+r[7]+'</td>'+
+        '<td>'+(r[8]==="open"?'<span class="chip warn">Open</span>':'<span class="chip ok">Closed</span>')+'</td></tr>';
+    });
+
+    var cal=[
+      ["FR-01","Freezer bank A","12 Feb 2026","A. Whitfield","12 months","12 Feb 2027","ok"],
+      ["FR-02","Freezer bank B","03 Sep 2025","A. Whitfield","12 months","03 Sep 2026","due"],
+      ["CL-01","Cooler bank","19 Mar 2026","External — ThermoCal","12 months","19 Mar 2027","ok"],
+      ["CL-02","Cooler dock apron","06 Sep 2025","A. Whitfield","12 months","06 Sep 2026","due"],
+      ["AM-01","Dry storage","28 Apr 2026","A. Whitfield","12 months","28 Apr 2027","ok"],
+      ["BL-01","Blast cell 1","11 Jan 2026","External — ThermoCal","6 months","11 Jul 2026","late"]
+    ];
+    var c=$("calBody"); c.innerHTML="";
+    cal.forEach(function(r){
+      var chip=r[6]==="ok"?'<span class="chip ok">Current</span>'
+             : r[6]==="due"?'<span class="chip warn">Due in 14 d</span>'
+             :              '<span class="chip late">Overdue</span>';
+      c.innerHTML+='<tr><td class="mono" style="font-weight:600">'+r[0]+'</td>'+
+        '<td style="white-space:normal">'+r[1]+'</td><td class="mono">'+r[2]+'</td>'+
+        '<td>'+r[3]+'</td><td class="mono">'+r[4]+'</td><td class="mono">'+r[5]+'</td>'+
+        '<td>'+chip+'</td></tr>';
+    });
+  }
+
+  /* ---------------- reports / billing ---------------- */
+  function drawReports(){
+    var rows=[
+      ["Gate in to door assigned","6","5","4","5","−2 min"],
+      ["Door assigned to first pallet","14","11","9","12","−4 min"],
+      ["Unload / load","58","46","38","48","−6 min"],
+      ["Paperwork and sign-out","18","16","13","16","−9 min"],
+      ["Total gate to gate","96","78","64","81","−21 min"]
+    ];
+    var b=$("rpBody"); b.innerHTML="";
+    rows.forEach(function(r,i){
+      var last=i===rows.length-1;
+      b.innerHTML+='<tr'+(last?' style="font-weight:700"':'')+'>'+
+        '<td style="white-space:normal">'+r[0]+'</td><td class="mono">'+r[1]+'</td>'+
+        '<td class="mono">'+r[2]+'</td><td class="mono">'+r[3]+'</td><td class="mono">'+r[4]+'</td>'+
+        '<td><span class="chip ok">'+r[5]+'</span></td></tr>';
+    });
+  }
+
+  function drawBilling(){
+    var rows=[
+      ["Cedar Ridge Foods",148,"312","18.5","$44,200","$5,550","$49,750","ready"],
+      ["Prairie Provisions Co.",121,"268","11.0","$36,800","$3,300","$40,100","ready"],
+      ["Halstead Frozen Goods",96,"214","22.0","$29,400","$6,600","$36,000","query"],
+      ["Northline Dairy",84,"176","6.5","$24,100","$1,950","$26,050","ready"],
+      ["Vantage Protein",63,"131","9.0","$18,600","$2,700","$21,300","ready"],
+      ["Kettleman Dry Goods",41,"88","3.5","$9,900","$1,050","$10,950","ready"]
+    ];
+    var b=$("blBody"); b.innerHTML="";
+    rows.forEach(function(r){
+      b.innerHTML+='<tr><td class="nm">'+r[0]+'</td><td class="mono">'+r[1]+'</td>'+
+        '<td class="mono">'+r[2]+'</td><td class="mono">'+r[3]+'</td>'+
+        '<td class="mono">'+r[4]+'</td><td class="mono" style="color:var(--accent);font-weight:600">'+r[5]+'</td>'+
+        '<td class="mono" style="font-weight:700">'+r[6]+'</td>'+
+        '<td>'+(r[7]==="ready"?'<span class="chip ok">Ready</span>':'<span class="chip warn">Query</span>')+'</td></tr>';
+    });
+  }
+
+  /* ---------------- KPIs ---------------- */
+  function kpis(){
+    var total=appts.length, self=appts.filter(function(a){ return a.via==="self"; }).length;
+    $("stAppt").textContent=total;
+    $("stSelf").textContent=self;
+    $("stPhone").textContent=total-self;
+    $("stSelfD").textContent=Math.round(self/total*100)+"%";
+    $("stPhoneD").textContent=Math.round((total-self)/total*100)+"%";
+    $("navCount").textContent=total;
+    ["frozen","cooler","ambient"].forEach(function(z){
+      var zc=ZONES[z], doors=zc.hi-zc.lo+1;
+      var mins=appts.filter(function(a){ return a.zone===z; })
+                    .reduce(function(s,a){ return s+a.dur; },0);
+      var u=Math.round(mins/(doors*720)*100);
+      var el=$("u"+z.charAt(0).toUpperCase()+z.slice(1));
+      if(el){ el.textContent=u; el.closest(".ub").querySelector(".track i").style.width=u+"%"; }
+    });
+  }
+
+  /* ---------------- view router ---------------- */
+  var TITLES={schedule:"Dock schedule",receiving:"Gate & receiving",carriers:"Carriers",
+    temps:"Temperature log",reports:"Turn-time reports",billing:"Billing export"};
+  var drawn={};
+  function showView(v){
+    qsa("#nav button").forEach(function(b){
+      if(b.getAttribute("data-view")===v) b.setAttribute("aria-current","page");
+      else b.removeAttribute("aria-current");
+    });
+    qsa("[data-pane]").forEach(function(p){ p.hidden = p.getAttribute("data-pane")!==v; });
+    $("crumbNow").textContent=TITLES[v];
+    if(!drawn[v]){
+      if(v==="receiving") drawReceiving();
+      if(v==="carriers")  drawCarriers();
+      if(v==="temps")     drawTemps();
+      if(v==="reports"){  drawTrend("trend2"); drawZoneBars(); drawReports(); }
+      if(v==="billing")   drawBilling();
+      drawn[v]=true;
+    }
+    window.scrollTo({top:0,behavior:"instant"});
+  }
+  qsa("#nav button").forEach(function(b){
+    b.addEventListener("click",function(){ showView(b.getAttribute("data-view")); });
+  });
+
+  /* ---------------- mode switch ---------------- */
+  function setMode(m){
+    $("appFacility").hidden = m!=="facility";
+    $("appPortal").hidden   = m!=="portal";
+    qsa(".modesw button").forEach(function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-mode")===m ? "true":"false");
+    });
+    window.scrollTo({top:0,behavior:"instant"});
+  }
+  qsa(".modesw button").forEach(function(b){
+    b.addEventListener("click",function(){ setMode(b.getAttribute("data-mode")); });
+  });
+
+  /* ================= PORTAL ================= */
+  var P={zone:"frozen",slot:null,day:0,booked:[]};
+  var DAYS=[["25","Tue"],["26","Wed"],["27","Thu"],["28","Fri"],["29","Sat"]];
+
+  qsa("#ptabs button").forEach(function(b){
+    b.addEventListener("click",function(){
+      var t=b.getAttribute("data-ptab");
+      qsa("#ptabs button").forEach(function(x){
+        x.setAttribute("aria-selected", x===b ? "true":"false"); });
+      qsa("[data-ptabpane]").forEach(function(p){
+        p.hidden = p.getAttribute("data-ptabpane")!==t; });
+      $("phero").hidden = t!=="book";
+      if(t==="mine") drawMine();
+      window.scrollTo({top:0,behavior:"instant"});
+    });
+  });
+
+  function pstep(n){
+    qsa("[data-pstep]").forEach(function(p){ p.hidden = +p.getAttribute("data-pstep")!==n; });
+    $("phero").classList.toggle("tight", n>1);
+    qsa(".stp").forEach(function(s){
+      var i=+s.getAttribute("data-step");
+      s.classList.toggle("on", i===n);
+      s.classList.toggle("did", i<n);
+    });
+    window.scrollTo({top:0,behavior:"instant"});
+  }
+
+  qsa("#pzones .zone").forEach(function(b){
+    b.addEventListener("click",function(){
+      qsa("#pzones .zone").forEach(function(x){
+        x.setAttribute("aria-pressed", x===b ? "true":"false"); });
+      P.zone=b.getAttribute("data-zone"); P.slot=null;
+    });
+  });
+
+  (function(){
+    var d=$("daybar");
+    DAYS.forEach(function(x,i){
+      var b=document.createElement("button");
+      b.type="button"; b.className="day";
+      b.setAttribute("aria-pressed", i===0 ? "true":"false");
+      b.innerHTML='<span>'+x[1]+'</span><b>'+x[0]+'</b>';
+      b.addEventListener("click",function(){
+        qsa(".day").forEach(function(y){ y.setAttribute("aria-pressed","false"); });
+        b.setAttribute("aria-pressed","true");
+        P.day=i; P.slot=null; drawPSlots(); syncP2();
+      });
+      d.appendChild(b);
+    });
+  })();
+
+  function freeDoor(zone,t,dur,day){
+    var z=ZONES[zone];
+    for(var d=z.lo; d<=z.hi; d++){
+      var clash = day===0 && appts.some(function(a){
+        return a.door===d && t < a.sched+a.dur && t+dur > a.sched;
+      });
+      var mine = P.booked.some(function(b){
+        return b.door===d && b.day===day && t < b.sched+b.dur && t+dur > b.sched;
+      });
+      if(!clash && !mine) return d;
+    }
+    return null;
+  }
+
+  function drawPSlots(){
+    var am=$("slotsAM"), pm=$("slotsPM");
+    am.innerHTML=""; pm.innerHTML="";
+    var start = P.day===0 ? 720 : 360;
+    for(var m=start; m<=1020; m+=30){
+      var d=freeDoor(P.zone,m,60,P.day);
+      var b=document.createElement("button");
+      b.type="button"; b.className="slot";
+      b.innerHTML=toHM(m)+(d!==null?'<small>Door '+pad(d)+'</small>':'<small>Full</small>');
+      if(d===null){ b.disabled=true; b.setAttribute("aria-label",toHM(m)+" — all doors booked"); }
+      else{
+        b.setAttribute("aria-pressed", P.slot===m ? "true":"false");
+        (function(mm){ b.addEventListener("click",function(){
+          P.slot=mm; drawPSlots(); syncP2(); }); })(m);
+      }
+      (m<720?am:pm).appendChild(b);
+    }
+    if(!am.children.length) am.innerHTML='<p style="color:var(--ink-faint);font-size:13px;margin:0">Morning slots have passed for today.</p>';
+    $("p2sub").textContent="Live availability in the "+ZONES[P.zone].label.toLowerCase()+
+      " bank ("+ZONES[P.zone].temp+"). Times shown are when you should be at the gate.";
+  }
+  function syncP2(){
+    var ok=P.slot!=null;
+    $("toStep3").disabled=!ok;
+    $("p2hint").textContent = ok
+      ? "Door "+pad(freeDoor(P.zone,P.slot,60,P.day))+" will be held for you."
+      : "Choose a time to continue.";
+  }
+
+  $("toStep2").addEventListener("click",function(){ drawPSlots(); syncP2(); pstep(2); });
+  qsa("[data-back]").forEach(function(b){
+    b.addEventListener("click",function(){ pstep(+b.getAttribute("data-back")); });
+  });
+
+  $("toStep3").addEventListener("click",function(){
+    var door=freeDoor(P.zone,P.slot,60,P.day), z=ZONES[P.zone], d=DAYS[P.day];
+    $("review").innerHTML=
+      '<dt>Carrier</dt><dd>'+esc($("p-carrier").value)+' &middot; '+esc($("p-mc").value)+'</dd>'+
+      '<dt>Driver</dt><dd>'+esc($("p-driver").value)+'</dd>'+
+      '<dt>Load</dt><dd>'+$("p-dir").value+' &middot; '+$("p-plt").value+' pallets &middot; '+esc($("p-ref").value)+'</dd>'+
+      '<dt>Zone</dt><dd>'+z.label+' &middot; '+z.temp+'</dd>'+
+      '<dt>Door</dt><dd>'+pad(door)+'</dd>'+
+      '<dt>Arrive</dt><dd>'+d[1]+' '+d[0]+' Aug &middot; '+toHM(P.slot)+'</dd>'+
+      '<dt>Free time</dt><dd>2 hours from gate scan, then detention applies</dd>';
+    pstep(3);
+  });
+
+  var passN=0;
+  $("toStep4").addEventListener("click",function(){
+    var door=freeDoor(P.zone,P.slot,60,P.day), z=ZONES[P.zone], d=DAYS[P.day];
+    passN++;
+    var ref="CS-"+(91440+passN);
+    var bk={door:door,zone:P.zone,sched:P.slot,dur:60,day:P.day,ref:ref,
+      carrier:$("p-carrier").value,load:$("p-ref").value,plt:+$("p-plt").value,
+      dir:$("p-dir").value,driver:$("p-driver").value};
+    P.booked.push(bk);
+
+    if(P.day===0){
+      appts.push({door:door,zone:P.zone,sched:P.slot,dur:60,carrier:bk.carrier,ref:bk.load,
+        plt:bk.plt,via:"self",dir:bk.dir,in:null,out:null,fresh:true,justAdded:true});
+      feedItems.unshift(["acc","11:31","<b>"+esc(bk.carrier)+"</b> booked door "+pad(door)+
+        " for "+toHM(P.slot)+", self-service"]);
+      drawLanes(); drawTable(); drawFeed(); kpis();
+      drawn.receiving=false; drawn.carriers=false;
+    }
+
+    $("passBox").innerHTML=
+      '<div class="pass"><div class="passtop">'+
+        '<div><span class="k">Gate pass</span><h3>'+esc(bk.carrier)+'</h3>'+
+        '<span style="font-size:13px;color:var(--ink-soft)">'+d[1]+' '+d[0]+' August &middot; arrive '+toHM(P.slot)+'</span></div>'+
+        '<div class="passdoor"><span class="k">Door</span><span class="n">'+pad(door)+'</span></div>'+
+        qrSvg()+
+      '</div>'+
+      '<div class="passgrid">'+
+        '<div><span class="l">Confirmation</span><span class="v mono">'+ref+'</span></div>'+
+        '<div><span class="l">Zone</span><span class="v">'+z.label+' &middot; '+z.temp+'</span></div>'+
+        '<div><span class="l">Load</span><span class="v">'+esc(bk.load)+'</span></div>'+
+        '<div><span class="l">Pallets</span><span class="v">'+bk.plt+'</span></div>'+
+        '<div><span class="l">Driver</span><span class="v">'+esc(bk.driver)+'</span></div>'+
+        '<div><span class="l">Free time</span><span class="v">2h 00</span></div>'+
+      '</div>'+
+      '<div class="passfoot">Scanning this at the gate stamps your arrival, and again on the way out. '+
+      '<strong>No call was made and nobody typed this in.</strong></div></div>';
+    pstep(4);
+  });
+
+  function qrSvg(){
+    var g='<svg class="qr" viewBox="0 0 29 29" aria-hidden="true"><rect width="29" height="29" fill="var(--panel)"/>';
+    var s=77;
+    function r(){ s=(s*1103515245+12345)&0x7fffffff; return s/0x7fffffff; }
+    for(var y=0;y<29;y++) for(var x=0;x<29;x++){
+      var fin=(x<7&&y<7)||(x>21&&y<7)||(x<7&&y>21);
+      if(fin) continue;
+      if(r()<.46) g+='<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="var(--ink)"/>';
+    }
+    [[0,0],[22,0],[0,22]].forEach(function(p){
+      g+='<rect x="'+p[0]+'" y="'+p[1]+'" width="7" height="7" fill="none" stroke="var(--ink)" stroke-width="1"/>'+
+         '<rect x="'+(p[0]+2)+'" y="'+(p[1]+2)+'" width="3" height="3" fill="var(--ink)"/>';
+    });
+    return g+'</svg>';
+  }
+
+  $("bookAnother").addEventListener("click",function(){ P.slot=null; pstep(1); });
+  $("seeMine").addEventListener("click",function(){ qs('#ptabs button[data-ptab="mine"]').click(); });
+
+  function drawMine(){
+    var host=$("mineList"); host.innerHTML="";
+    var base=[
+      {door:12,zone:"frozen",sched:390,day:-1,ref:"CS-91312",load:"PO-4388",plt:24,
+       dir:"Inbound",state:"done",turn:81},
+      {door:20,zone:"cooler",sched:642,day:0,ref:"CS-91401",load:"PO-4441",plt:18,
+       dir:"Inbound",state:"done",turn:104}
+    ];
+    var all=base.concat(P.booked.map(function(b){
+      return {door:b.door,zone:b.zone,sched:b.sched,day:b.day,ref:b.ref,load:b.load,
+        plt:b.plt,dir:b.dir,state:"upcoming"};
+    }));
+    if(!P.booked.length){
+      host.innerHTML='<div class="arow"><div class="mid"><b>Nothing booked yet</b>'+
+        '<span>Book a door and it will show up here with its gate pass.</span></div></div>'+host.innerHTML;
+    }
+    all.forEach(function(a){
+      var d = a.day===-1 ? "Yesterday" : a.day===0 ? "Today" : (DAYS[a.day][1]+" "+DAYS[a.day][0]+" Aug");
+      var right = a.state==="done"
+        ? '<span class="chip ok">Turned '+fmtT(a.turn)+'</span>'
+        : '<span class="chip sched">Confirmed</span>';
+      host.innerHTML+=
+        '<div class="arow"><span class="dr">'+pad(a.door)+'</span>'+
+          '<div class="mid"><b>'+d+' &middot; '+toHM(a.sched)+'</b>'+
+            '<span>'+esc(a.load)+' &middot; '+a.plt+' pallets &middot; '+a.dir+' &middot; '+ZONES[a.zone].label+'</span></div>'+
+          '<div class="rt"><span class="tm mono">'+esc(a.ref)+'</span>'+right+'</div></div>';
+    });
+  }
+
+  /* ---------------- boot ---------------- */
+  drawLanes(); drawTable(); drawFeed(); kpis(); drawTrend("trend");
+  drawn.schedule=true;
+  drawPSlots(); syncP2();
+})();
+</script>
+</body>
+</html>
